@@ -56,7 +56,7 @@ solve :-
 	
 		% Stella picked the Cottage Beauty
 		member([stella, cottage_beauty, _, _], Quadruple),
-	
+
 	% Second point
 		% Hush selected the Pink Paradise blooms
 		member([hugh, pink_paradise, _, _], Quadruple),
@@ -72,7 +72,7 @@ solve :-
 		member([_, _, anniversary, streamers], Quadruple),
 		
 		% The one shopping for a wedding chose the balloons
-		member([_, _, balloons], Quadruple),
+		member([_, _, wedding, balloons], Quadruple),
 	
 	% Fourth point 
 		% The customer who bought the Sweet Dreams variery also bought
@@ -90,6 +90,11 @@ solve :-
 		% candles
 		member([_, _, senior_proms, candles], Quadruple),
 
+	tell(ida, IdaRose, IdaEvent, IdaItem), 
+	tell(jeremy, JeremyRose, JeremyEvent, JeremyItem), 
+	tell(hugh, HughRose, HughEvent, HughItem), 
+	tell(stella, StellaRose, StellaEvent, StellaItem), 
+	tell(leroy, LeroyRose, LeroyEvent, LeroyItem).
 
 all_different([H | T]) :- member(H, T), !, fail.
 all_different([_ | T]) :- all_different(T).
