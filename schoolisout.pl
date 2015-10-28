@@ -91,17 +91,13 @@ solve :-
 	% If the woman who is going to Hertfordshire is the english teacher
 	% then she is Ms.Appleton otherwise she is Ms.Parnell
 	% Ms.Parnell is going swimming
-
+	\+ member([knight, _, hertfordshire, _], Quadruple),
+	\+ member([mcevoy, _, hertfordshire, _], Quadruple),
 	member([parnell, swimming, _, _], Quadruple),
+	member([appleton, _, _, english], Quadruple),
 	(
-		% She teaches english therefore is Ms.Appleton	
-		member([appleton, _, hertfordshire, english], Quadruple);
-		
-		% She does not teach english, then she is Ms.Parnell
-		(
-			member([parnell, _, hertfordshire, _], Quadruple),
-			\+ member([parnell, _, _, english], Quadruple)
-		)
+		member([appleton, _, hertfordshire, _], Quadruple);
+		member([parnell, _, hertfordshire, _], Quadruple)
 	),
 
 	% Fifth point
