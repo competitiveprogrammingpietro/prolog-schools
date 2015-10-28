@@ -1,3 +1,6 @@
+% Pietro Paolini - Birkbeck University
+% Programming Paradigms 2015/2016 Logic programming coursework
+
 % Teachers
 teacher(knight).
 teacher(gross).
